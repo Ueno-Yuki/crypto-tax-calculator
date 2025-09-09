@@ -1,0 +1,146 @@
+// Main stylesheet - includes all styles
+
+// CSS Variables
+:root {
+  // Primary colors
+  --color-primary: #1976d2;
+  --color-primary-dark: #1565c0;
+  --color-primary-light: #42a5f5;
+  
+  // Success/Error colors for gains/losses
+  --color-success: #4caf50;
+  --color-success-light: #81c784;
+  --color-error: #f44336;
+  --color-error-light: #e57373;
+  --color-warning: #ff9800;
+  --color-info: #2196f3;
+  
+  // Neutral colors
+  --color-background: #fafafa;
+  --color-surface: #ffffff;
+  --color-surface-variant: #f5f5f5;
+  --color-on-surface: #212121;
+  --color-on-surface-variant: #757575;
+  
+  // Spacing
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  // Border radius
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  
+  // Shadows
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.12);
+  
+  // Typography
+  --font-family-primary: 'Roboto', 'Noto Sans JP', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  
+  // Animation
+  --transition-fast: 0.15s ease-out;
+  --transition-normal: 0.25s ease-out;
+}
+
+// Global styles
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+// Global layout
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: var(--spacing-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+// Utility classes
+.text-positive {
+  color: var(--color-success) !important;
+}
+
+.text-negative {
+  color: var(--color-error) !important;
+}
+
+.text-neutral {
+  color: var(--color-on-surface) !important;
+}
+
+// Chart container
+.chart-container {
+  position: relative;
+  background: var(--color-surface);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+// Typography overrides
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-on-surface);
+}
+
+// Form elements
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+// Animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+// Print styles (for tax reports)
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .chart-container,
+  .portfolio-card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+}

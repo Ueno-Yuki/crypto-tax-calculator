@@ -1,0 +1,190 @@
+// Component-specific styles and utility classes
+
+// Chart container
+.chart-container {
+  position: relative;
+  background: var(--color-surface);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    
+    h3 {
+      margin: 0;
+      color: var(--color-on-surface);
+      font-weight: var(--font-weight-medium);
+    }
+  }
+  
+  &__content {
+    min-height: 300px;
+    position: relative;
+  }
+}
+
+// Portfolio cards
+.portfolio-card {
+  background: var(--color-surface);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-lg);
+  transition: box-shadow var(--transition-normal);
+  
+  &:hover {
+    box-shadow: var(--shadow-md);
+  }
+  
+  &__title {
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-on-surface);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  &__value {
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-xs);
+    
+    &--positive {
+      color: var(--color-success);
+    }
+    
+    &--negative {
+      color: var(--color-error);
+    }
+    
+    &--neutral {
+      color: var(--color-on-surface);
+    }
+  }
+  
+  &__subtitle {
+    font-size: 0.875rem;
+    color: var(--color-on-surface-variant);
+  }
+}
+
+// Asset performance table
+.asset-table {
+  background: var(--color-surface);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  
+  &__row {
+    border-bottom: 1px solid var(--color-surface-variant);
+    transition: background-color var(--transition-fast);
+    
+    &:hover {
+      background-color: var(--color-surface-variant);
+    }
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  &__cell {
+    padding: var(--spacing-md);
+    
+    &--symbol {
+      font-weight: var(--font-weight-medium);
+      color: var(--color-on-surface);
+    }
+    
+    &--positive {
+      color: var(--color-success);
+      font-weight: var(--font-weight-medium);
+    }
+    
+    &--negative {
+      color: var(--color-error);
+      font-weight: var(--font-weight-medium);
+    }
+  }
+}
+
+// Simulation panel
+.simulation-panel {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  color: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  
+  &__title {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  &__result {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    backdrop-filter: blur(10px);
+  }
+}
+
+// Utility classes
+.text-positive {
+  color: var(--color-success) !important;
+}
+
+.text-negative {
+  color: var(--color-error) !important;
+}
+
+.text-neutral {
+  color: var(--color-on-surface) !important;
+}
+
+.bg-positive {
+  background-color: var(--color-success) !important;
+}
+
+.bg-negative {
+  background-color: var(--color-error) !important;
+}
+
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// Responsive utilities
+.mobile-only {
+  @media (min-width: 768px) {
+    display: none !important;
+  }
+}
+
+.desktop-only {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
