@@ -2,11 +2,10 @@
   <v-app>
     <v-app-bar 
       color="primary" 
-      dark 
       app
     >
       <v-app-bar-title>
-        <v-icon left>mdi-currency-btc</v-icon>
+        <v-icon class="me-2">mdi-currency-btc</v-icon>
         仮想通貨確定申告支援アプリ
       </v-app-bar-title>
       
@@ -31,7 +30,7 @@
       <v-row justify="center" no-gutters>
         <v-col class="text-center" cols="12">
           <small>
-            <v-icon small>mdi-shield-check</v-icon>
+            <v-icon size="small" class="me-1">mdi-shield-check</v-icon>
             プライバシー重視 - データは一切保存されません
           </small>
         </v-col>
