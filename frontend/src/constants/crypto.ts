@@ -1,27 +1,38 @@
 // 仮想通貨関連の定数
 
-export const SUPPORTED_CRYPTOCURRENCIES = [
-  { symbol: 'BTC', name: 'Bitcoin', decimals: 8 },
-  { symbol: 'ETH', name: 'Ethereum', decimals: 18 },
-  { symbol: 'USDT', name: 'Tether', decimals: 6 },
-  { symbol: 'BNB', name: 'Binance Coin', decimals: 18 },
-  { symbol: 'SOL', name: 'Solana', decimals: 9 },
-  { symbol: 'XRP', name: 'Ripple', decimals: 6 },
-  { symbol: 'USDC', name: 'USD Coin', decimals: 6 },
-  { symbol: 'ADA', name: 'Cardano', decimals: 6 },
-  { symbol: 'AVAX', name: 'Avalanche', decimals: 18 },
-  { symbol: 'DOGE', name: 'Dogecoin', decimals: 8 },
-  { symbol: 'DOT', name: 'Polkadot', decimals: 10 },
-  { symbol: 'MATIC', name: 'Polygon', decimals: 18 },
-  { symbol: 'LINK', name: 'Chainlink', decimals: 18 },
-  { symbol: 'LTC', name: 'Litecoin', decimals: 8 },
-  { symbol: 'ATOM', name: 'Cosmos', decimals: 6 },
-  { symbol: 'UNI', name: 'Uniswap', decimals: 18 },
-  { symbol: 'ICP', name: 'Internet Computer', decimals: 8 },
-  { symbol: 'FIL', name: 'Filecoin', decimals: 18 },
-  { symbol: 'APT', name: 'Aptos', decimals: 8 },
-  { symbol: 'ARB', name: 'Arbitrum', decimals: 18 }
+// Coincheckで取り扱っている仮想通貨（2024年12月時点）
+export const COINCHECK_CRYPTOCURRENCIES = [
+  { symbol: 'BTC', name: 'ビットコイン', decimals: 8, icon: 'mdi-bitcoin', color: '#F7931A' },
+  { symbol: 'ETH', name: 'イーサリアム', decimals: 18, icon: 'mdi-ethereum', color: '#627EEA' },
+  { symbol: 'ETC', name: 'イーサリアムクラシック', decimals: 18, icon: 'mdi-currency-sign', color: '#328332' },
+  { symbol: 'LSK', name: 'リスク', decimals: 8, icon: 'mdi-currency-sign', color: '#0D47A1' },
+  { symbol: 'XRP', name: 'リップル', decimals: 6, icon: 'mdi-currency-sign', color: '#23292F' },
+  { symbol: 'XEM', name: 'ネム', decimals: 6, icon: 'mdi-currency-sign', color: '#67B2E8' },
+  { symbol: 'LTC', name: 'ライトコイン', decimals: 8, icon: 'mdi-litecoin', color: '#BFBBBB' },
+  { symbol: 'BCH', name: 'ビットコインキャッシュ', decimals: 8, icon: 'mdi-currency-sign', color: '#8DC351' },
+  { symbol: 'MONA', name: 'モナコイン', decimals: 8, icon: 'mdi-currency-sign', color: '#FF6600' },
+  { symbol: 'XLM', name: 'ステラルーメン', decimals: 7, icon: 'mdi-star-circle', color: '#7D00FF' },
+  { symbol: 'QTUM', name: 'クアンタム', decimals: 8, icon: 'mdi-currency-sign', color: '#2E9AD0' },
+  { symbol: 'BAT', name: 'バット', decimals: 18, icon: 'mdi-currency-sign', color: '#FF5000' },
+  { symbol: 'IOST', name: 'アイオーエスティー', decimals: 8, icon: 'mdi-currency-sign', color: '#1C1C1C' },
+  { symbol: 'ENJ', name: 'エンジンコイン', decimals: 18, icon: 'mdi-gamepad-variant', color: '#624DBF' },
+  { symbol: 'OMG', name: 'オーエムジー', decimals: 18, icon: 'mdi-currency-sign', color: '#1A53F0' },
+  { symbol: 'PLT', name: 'パレットトークン', decimals: 18, icon: 'mdi-palette', color: '#E50000' },
+  { symbol: 'SAND', name: 'サンドボックス', decimals: 18, icon: 'mdi-cube', color: '#00D4FF' },
+  { symbol: 'DOT', name: 'ポルカドット', decimals: 10, icon: 'mdi-currency-sign', color: '#E6007A' },
+  { symbol: 'FNCT', name: 'ファンクションエックス', decimals: 18, icon: 'mdi-function', color: '#F5A623' },
+  { symbol: 'CHZ', name: 'チリーズ', decimals: 18, icon: 'mdi-chili-hot', color: '#CD212A' },
+  { symbol: 'LINK', name: 'チェーンリンク', decimals: 18, icon: 'mdi-link', color: '#375BD2' },
+  { symbol: 'MKR', name: 'メイカー', decimals: 18, icon: 'mdi-currency-sign', color: '#1AAB9B' },
+  { symbol: 'MATIC', name: 'ポリゴン', decimals: 18, icon: 'mdi-hexagon', color: '#8247E5' },
+  { symbol: 'IMX', name: 'イミュータブルエックス', decimals: 18, icon: 'mdi-infinity', color: '#00D4FF' },
+  { symbol: 'AXS', name: 'アクシーインフィニティ', decimals: 18, icon: 'mdi-gamepad-variant', color: '#0055D4' },
+  { symbol: 'DOGE', name: 'ドージコイン', decimals: 8, icon: 'mdi-dog', color: '#C2A633' },
+  { symbol: 'APE', name: 'エイプコイン', decimals: 18, icon: 'mdi-currency-sign', color: '#0D1421' },
 ] as const
+
+// 後方互換性のため
+export const SUPPORTED_CRYPTOCURRENCIES = COINCHECK_CRYPTOCURRENCIES
 
 export const TRANSACTION_TYPES = [
   { value: 'BUY', label: '購入', color: 'success' },
